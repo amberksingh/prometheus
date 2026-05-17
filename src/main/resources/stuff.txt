@@ -1,0 +1,36 @@
+url for prometheus :  http://localhost:8100/actuator/prometheus
+
+prometheus dashboard : http://localhost:9090
+
+
+docker run cmd prometheus for root yml file in case
+----------------------------------------------------
+docker run -d \
+  --name prometheus \
+  -p 9090:9090 \
+  -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
+  prom/prometheus
+
+docker run cmd prometheus if prometheus yml file in src/main/resources
+-------------------------
+docker run -d \
+  --name prometheus \
+  -p 9090:9090 \
+  -v $(pwd)/src/main/resources/prometheus.yml:/etc/prometheus/prometheus.yml \
+  prom/prometheus
+
+run docker in below directory for yml file path to work
+--------------------------------------------------------
+cd /Users/ambersingh/Downloads/git-repos/prometheus
+
+
+Run Grafana with Docker
+----------------------------
+docker run -d \
+  --name grafana \
+  -p 3000:3000 \
+  grafana/grafana
+
+grafana dashboard url : http://localhost:3000
+username : admin
+password :admin
