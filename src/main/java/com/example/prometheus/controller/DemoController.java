@@ -14,7 +14,7 @@ import java.net.URI;
 @RequestMapping("/monitoring")
 public class DemoController {
 
-    String str = "demo string to test the stash scenario";
+    String str = "main committed stash demo string";
 
     @Autowired
     ServiceClass service;
