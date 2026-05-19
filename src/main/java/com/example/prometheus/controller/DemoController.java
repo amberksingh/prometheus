@@ -16,7 +16,7 @@ public class DemoController {
 
     String str = "main committed stash demo string";
 
-    String stashStr = "stash scenario feature1 string";
+    String stashStr = "stash scenario main string";
 
     @Autowired
     ServiceClass service;
