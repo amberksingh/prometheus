@@ -22,6 +22,8 @@ public class DemoController {
 
     String stashTwo = "second stash change";
 
+    String stashThree = "third stash change";
+
     @Autowired
     ServiceClass service;
 
