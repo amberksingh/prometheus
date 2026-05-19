@@ -20,6 +20,8 @@ public class DemoController {
 
     String stashOne = "first stash change";
 
+    String stashTwo = "second stash change";
+
     @Autowired
     ServiceClass service;
 
