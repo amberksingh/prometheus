@@ -18,6 +18,8 @@ public class DemoController {
 
     String stashStr = "stash scenario main string";
 
+    String stashOne = "first stash change";
+
     @Autowired
     ServiceClass service;
 
