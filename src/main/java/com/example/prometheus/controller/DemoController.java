@@ -16,6 +16,8 @@ public class DemoController {
 
     String str = "main committed stash demo string";
 
+    String stashStr = "stash scenario string";
+
     @Autowired
     ServiceClass service;
 
