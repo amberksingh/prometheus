@@ -3,6 +3,7 @@ package com.example.prometheus.controller;
 import com.example.prometheus.model.Student;
 import com.example.prometheus.service.StudentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,5 +33,23 @@ public class StudentController {
     @GetMapping("/old-school/{id}")
     public Student getStudentOldSchool(@PathVariable Long id) {
         return studentService.getStudentByIdOldSchool(id);
+    }
+
+    //===config repo and config server related data and endpoint with default values in yml file if config server not running=====
+    @Value("${student.app-name: Local App}")
+    private String appName;
+
+    @Value("${student.max-students: 10}")
+    private int maxStudents;
+
+    @Value("${student.subject: Java}")
+    private String subject;
+
+    @GetMapping("/config")
+    public String config() {
+        System.out.println("appName : " + appName);
+        System.out.println("maxStudents : " + maxStudents);
+        System.out.println("subject : " + subject);
+        return appName + " : " + maxStudents + " : " + subject;
     }
 }
